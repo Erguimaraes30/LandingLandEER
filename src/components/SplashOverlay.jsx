@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const splashLogo = `${import.meta.env.BASE_URL}assets/landeer-logo-splash.png`;
+const splashLogo = `${import.meta.env.BASE_URL}assets/landeer-logo-mark.png`;
 
 export function SplashOverlay() {
   const { scrollY } = useScroll();
@@ -18,7 +18,7 @@ export function SplashOverlay() {
         style={{ opacity: logoOpacity, scale: logoScale }}
         src={splashLogo}
         alt=""
-        className="h-auto w-[min(62vw,22rem)] rounded-[26%] shadow-[0_0_120px_rgba(123,61,255,0.24)] sm:w-[min(42vw,28rem)]"
+        className="h-auto w-[min(78vw,34rem)] drop-shadow-[0_0_90px_rgba(123,61,255,0.32)] sm:w-[min(54vw,44rem)]"
       />
     </motion.div>
   );

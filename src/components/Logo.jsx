@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
-const logoImage = assetPath('assets/landeer_imagem_fundo_preto.png');
+const logoImage = assetPath('assets/landeer-logo-mark.png');
 const logoText = assetPath('assets/landeer_escrita_fundo_preto.png');
 
 function useExistingImage(src) {
@@ -24,7 +24,7 @@ export function Logo({ compact = false }) {
   if (hasMark || hasWordmark) {
     return (
       <span className="flex items-center gap-3">
-        {hasMark ? <img src={logoImage} alt="" className="h-9 w-9 rounded-lg object-contain" /> : null}
+        {hasMark ? <img src={logoImage} alt="" className="h-9 w-11 object-contain" /> : null}
         {hasWordmark ? (
           <img src={logoText} alt="LandEER" className={compact ? 'h-6 w-auto' : 'h-7 w-auto'} />
         ) : (
