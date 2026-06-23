@@ -12,8 +12,8 @@ export function Portfolio() {
           text="Exemplos fictícios do tipo de estrutura que a LandEER pode desenhar para diferentes objetivos de venda."
         />
         <div className="mt-14 grid gap-4 lg:grid-cols-3">
-          {portfolioItems.map((item, index) => (
-            <Card key={item.title} delay={index * 0.06} className="min-h-72">
+          {portfolioItems.map((item) => (
+            <Card key={item.title} className="min-h-72">
               <div className="mb-8 h-36 overflow-hidden rounded-[8px] border border-white/10 bg-[radial-gradient(circle_at_70%_30%,rgba(0,212,255,0.32),transparent_28%),radial-gradient(circle_at_20%_80%,rgba(168,85,255,0.28),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.025))]">
                 <div className="h-full w-full bg-[linear-gradient(120deg,transparent_0%,rgba(255,255,255,0.16)_48%,transparent_60%)] opacity-45" />
               </div>

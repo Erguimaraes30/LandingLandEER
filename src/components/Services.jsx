@@ -11,8 +11,8 @@ export function Services() {
           text="Da primeira versão de uma página até campanhas mais robustas, cada entrega é pensada para clareza, velocidade e conversão."
         />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ title, text, icon: Icon }, index) => (
-            <Card key={title} delay={index * 0.04}>
+          {services.map(({ title, text, icon: Icon }) => (
+            <Card key={title}>
               <div className="mb-6 flex items-center justify-between gap-4">
                 <div className="grid h-12 w-12 place-items-center rounded-[8px] border border-landeer-cyan/20 bg-landeer-cyan/10 text-landeer-cyan">
                   <Icon size={22} aria-hidden="true" />

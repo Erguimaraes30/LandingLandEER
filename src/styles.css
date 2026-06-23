@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,6 +28,21 @@ body {
 ::selection {
   background: rgba(0, 212, 255, 0.32);
   color: #ffffff;
+}
+
+.scroll-cue {
+  animation: scroll-cue 1.35s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 input[type='number']::-webkit-inner-spin-button,

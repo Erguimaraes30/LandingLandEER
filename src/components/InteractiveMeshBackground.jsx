@@ -10,6 +10,7 @@ export function InteractiveMeshBackground() {
     const pointer = { x: 0.72, y: 0.45, active: false };
     let frame = 0;
     let animationId = 0;
+    let lastFrameTime = 0;
     let width = 0;
     let height = 0;
     let dpr = 1;
@@ -34,14 +35,26 @@ export function InteractiveMeshBackground() {
       pointer.active = false;
     }
 
-    function draw() {
-      frame += prefersReducedMotion ? 0 : 0.016;
+    function draw(time = 0) {
+      animationId = 0;
+
+      if (document.hidden) {
+        return;
+      }
+
+      if (!prefersReducedMotion && time - lastFrameTime < 33) {
+        animationId = window.requestAnimationFrame(draw);
+        return;
+      }
+
+      lastFrameTime = time;
+      frame += prefersReducedMotion ? 0 : 0.032;
       ctx.clearRect(0, 0, width, height);
 
       const pulseX = width * (pointer.active ? pointer.x : 0.72);
       const pulseY = height * (pointer.active ? pointer.y : 0.48);
-      const cols = width < 700 ? 34 : 58;
-      const rows = width < 700 ? 17 : 25;
+      const cols = width < 700 ? 26 : 42;
+      const rows = width < 700 ? 13 : 18;
       const startX = width * (width < 700 ? -0.22 : 0.08);
       const endX = width * 1.1;
       const baseY = height * (width < 700 ? 0.68 : 0.61);
@@ -117,17 +130,46 @@ export function InteractiveMeshBackground() {
       }
     }
 
+    function startAnimation() {
+      if (!animationId) {
+        animationId = window.requestAnimationFrame(draw);
+      }
+    }
+
+    function onVisibilityChange() {
+      if (document.hidden) {
+        window.cancelAnimationFrame(animationId);
+        animationId = 0;
+        return;
+      }
+
+      resize();
+      lastFrameTime = 0;
+      if (prefersReducedMotion) {
+        draw();
+      } else {
+        startAnimation();
+      }
+    }
+
     resize();
-    draw();
+    if (prefersReducedMotion) {
+      draw();
+    } else {
+      startAnimation();
+    }
+
     window.addEventListener('resize', resize);
-    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointermove', onPointerMove, { passive: true });
     window.addEventListener('pointerleave', onPointerLeave);
+    document.addEventListener('visibilitychange', onVisibilityChange);
 
     return () => {
       window.cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerleave', onPointerLeave);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
     };
   }, []);
 

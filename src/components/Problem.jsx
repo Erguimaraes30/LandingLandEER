@@ -11,8 +11,8 @@ export function Problem() {
           text="Uma landing page bem construída guia a atenção, elimina ruído e deixa claro por que o visitante deve agir agora."
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {problemCards.map(({ title, text, icon: Icon }, index) => (
-            <Card key={title} delay={index * 0.05}>
+          {problemCards.map(({ title, text, icon: Icon }) => (
+            <Card key={title}>
               <div className="mb-5 grid h-12 w-12 place-items-center rounded-[8px] bg-white/[0.06] text-landeer-cyan">
                 <Icon size={22} aria-hidden="true" />
               </div>
