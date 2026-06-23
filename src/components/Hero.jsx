@@ -1,6 +1,8 @@
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { whatsappBase } from '../data.js';
 
+const heroMesh = `${import.meta.env.BASE_URL}assets/hero-neon-mesh.png`;
+
 export function Hero() {
   return (
     <section id="inicio" className="relative isolate h-[175vh] bg-void">
@@ -8,7 +10,7 @@ export function Hero() {
       <div className="sticky top-0 min-h-screen overflow-hidden pt-20">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_right,rgba(59,130,255,0.26),transparent_30%),radial-gradient(circle_at_20%_10%,rgba(168,85,255,0.22),transparent_26%),linear-gradient(180deg,#05060D_0%,#0D0F1A_100%)]" />
         <img
-          src="/assets/hero-neon-mesh.png"
+          src={heroMesh}
           alt=""
           aria-hidden="true"
           className="absolute inset-y-10 right-[-28rem] -z-10 h-[82vh] w-[72rem] max-w-none object-cover mix-blend-screen sm:right-[-20rem] lg:right-[-9rem] xl:right-0"

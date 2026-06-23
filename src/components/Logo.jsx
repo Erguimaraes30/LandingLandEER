@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const logoImage = '/assets/landeer_imagem_fundo_preto.png';
-const logoText = '/assets/landeer_escrita_fundo_preto.png';
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+const logoImage = assetPath('assets/landeer_imagem_fundo_preto.png');
+const logoText = assetPath('assets/landeer_escrita_fundo_preto.png');
 
 function useExistingImage(src) {
   const [exists, setExists] = useState(false);
