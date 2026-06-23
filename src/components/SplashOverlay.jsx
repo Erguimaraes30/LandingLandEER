@@ -20,7 +20,7 @@ export function SplashOverlay() {
         style={{ opacity: logoOpacity, scale: logoScale }}
         src={splashLogo}
         alt=""
-        className="relative z-10 h-auto w-[min(52vw,17rem)] drop-shadow-[0_0_64px_rgba(123,61,255,0.34)] sm:w-[min(34vw,24rem)]"
+        className="relative z-10 h-auto w-[min(42vw,13rem)] drop-shadow-[0_0_58px_rgba(123,61,255,0.36)] sm:w-[min(26vw,18rem)]"
       />
       <div className="absolute left-1/2 top-1/2 z-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-landeer-purple/24 blur-[86px] sm:h-96 sm:w-96" />
       <div className="absolute left-[58%] top-[46%] z-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-landeer-cyan/18 blur-[78px] sm:h-72 sm:w-72" />
