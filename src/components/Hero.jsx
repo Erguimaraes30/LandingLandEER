@@ -1,5 +1,6 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { whatsappBase } from '../data.js';
+import { WhatsAppIcon } from '../icons/WhatsAppIcon.jsx';
 import { InteractiveMeshBackground } from './InteractiveMeshBackground.jsx';
 
 export function Hero() {
@@ -38,7 +39,7 @@ export function Hero() {
                 rel="noreferrer"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[8px] border border-white/14 bg-white/[0.04] px-6 py-3 text-sm font-bold text-white backdrop-blur transition hover:border-landeer-cyan/70 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-landeer-cyan"
               >
-                <MessageCircle size={18} aria-hidden="true" />
+                <WhatsAppIcon size={18} aria-hidden="true" />
                 Falar no WhatsApp
               </a>
             </div>

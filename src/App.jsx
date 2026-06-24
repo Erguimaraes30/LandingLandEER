@@ -3,7 +3,7 @@ import { FinalCTA } from './components/FinalCTA.jsx';
 import { Footer } from './components/Footer.jsx';
 import { Hero } from './components/Hero.jsx';
 import { Navbar } from './components/Navbar.jsx';
-import { Portfolio } from './components/Portfolio.jsx';
+// import { Portfolio } from './components/Portfolio.jsx';
 import { Process } from './components/Process.jsx';
 import { Problem } from './components/Problem.jsx';
 import { Services } from './components/Services.jsx';
@@ -22,7 +22,7 @@ export default function App() {
         <Services />
         <Process />
         <BudgetCalculator />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <FinalCTA />
       </main>
       <Footer />

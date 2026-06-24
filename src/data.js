@@ -11,7 +11,6 @@ import {
   LayoutDashboard,
   Mail,
   Megaphone,
-  MessageCircle,
   MousePointerClick,
   Palette,
   Rocket,
@@ -23,13 +22,14 @@ import {
   WandSparkles,
   Zap,
 } from 'lucide-react';
+import { WhatsAppIcon } from './icons/WhatsAppIcon.jsx';
 
 export const socialLinks = [
-  { label: 'E-mail', href: 'mailto:contato@landeer.com', icon: Mail },
-  { label: 'Instagram', href: 'https://instagram.com/landeer', icon: Instagram },
-  { label: 'Facebook', href: 'https://facebook.com/landeer', icon: Facebook },
-  { label: 'WhatsApp', href: 'https://wa.me/5500000000000', icon: MessageCircle },
-  { label: 'GitHub', href: 'https://github.com/landeer', icon: Github },
+  { label: 'E-mail', href: 'mailto:contato.landeer@gmail.com', icon: Mail },
+  { label: 'Instagram', href: 'https://www.instagram.com/landeer_oficial/', icon: Instagram },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61591547630045&sk=directory_links', icon: Facebook },
+  { label: 'WhatsApp', href: 'https://wa.me/5521999105599', icon: WhatsAppIcon },
+  { label: 'GitHub', href: 'https://github.com/LandEER-Projects', icon: Github },
 ];
 
 export const navLinks = [
@@ -37,7 +37,6 @@ export const navLinks = [
   { label: 'Serviços', href: '#servicos' },
   { label: 'Processo', href: '#processo' },
   { label: 'Orçamento', href: '#orcamento' },
-  { label: 'Portfólio', href: '#portfolio' },
   { label: 'Contato', href: '#contato' },
 ];
 
@@ -52,7 +51,7 @@ export const solutionCards = [
   { title: 'Layout responsivo', icon: Smartphone },
   { title: 'Copy focada em conversão', icon: FileText },
   { title: 'Performance otimizada', icon: Zap },
-  { title: 'Integração com WhatsApp e redes sociais', icon: MessageCircle },
+  { title: 'Integração com WhatsApp e redes sociais', icon: WhatsAppIcon },
   { title: 'Estrutura pronta para tráfego pago', icon: Megaphone },
   { title: 'Código moderno em React', icon: Code2 },
 ];
@@ -79,21 +78,31 @@ export const portfolioItems = [
   { title: 'Página comercial para negócio local', tag: 'WhatsApp', text: 'Experiência mobile-first com prova visual, oferta clara e contato imediato.' },
 ];
 
-export const whatsappBase = 'https://wa.me/5500000000000';
-export const emailAddress = 'contato@landeer.com';
+export const whatsappBase = 'https://wa.me/5521999105599';
+export const emailAddress = 'contato.landeer@gmail.com';
 
 export const plans = [
-  { id: 'simples', name: 'Simples', price: 350, description: 'Essencial para validar uma oferta com presença profissional.' },
-  { id: 'profissional', name: 'Profissional', price: 700, description: 'Mais estratégia, seções e acabamento para campanhas.' },
-  { id: 'premium', name: 'Premium', price: 1200, description: 'Experiência completa para lançamentos e páginas robustas.' },
-];
-
-export const addOns = [
-  { id: 'copywriting', label: 'Copywriting', price: 250 },
-  { id: 'formulario', label: 'Formulário de contato', price: 150 },
-  { id: 'whatsapp', label: 'Integração com WhatsApp', price: 100 },
-  { id: 'animacoes', label: 'Animações avançadas', price: 200 },
-  { id: 'deploy', label: 'Deploy/publicação', price: 150 },
+  {
+    id: 'simples',
+    name: 'Simples',
+    price: 239.99,
+    deadlines: { normal: '2 dias', urgente: '1 dia' },
+    description: 'Essencial para validar uma oferta com presença profissional.',
+  },
+  {
+    id: 'profissional',
+    name: 'Profissional',
+    price: 359.99,
+    deadlines: { normal: '4 dias', urgente: '2 dias' },
+    description: 'Mais estratégia, seções e acabamento para campanhas.',
+  },
+  {
+    id: 'premium',
+    name: 'Premium',
+    price: 479.99,
+    deadlines: { normal: '7 dias', urgente: '4 dias' },
+    description: 'Experiência completa para lançamentos e páginas robustas.',
+  },
 ];
 
 export const decorativeIcons = [WandSparkles, Code2, Rocket];

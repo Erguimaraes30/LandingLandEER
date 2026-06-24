@@ -1,5 +1,6 @@
-import { Mail, MessageCircle } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { emailAddress, whatsappBase } from '../data.js';
+import { WhatsAppIcon } from '../icons/WhatsAppIcon.jsx';
 
 export function FinalCTA() {
   return (
@@ -19,7 +20,7 @@ export function FinalCTA() {
             rel="noreferrer"
             className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[8px] bg-landeer-gradient px-6 py-3 text-sm font-bold text-white shadow-neon transition hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-landeer-cyan"
           >
-            <MessageCircle size={18} aria-hidden="true" />
+            <WhatsAppIcon size={18} aria-hidden="true" />
             Chamar no WhatsApp
           </a>
           <a
