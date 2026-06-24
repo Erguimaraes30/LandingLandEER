@@ -16,7 +16,8 @@ export function BudgetCalculator() {
   const [deadline, setDeadline] = useState('normal');
 
   const plan = plans.find((item) => item.id === selectedPlan) ?? plans[1];
-  const formattedTotal = currency.format(plan.price);
+  const total = deadline === 'urgente' ? Math.round(plan.price * 125) / 100 : plan.price;
+  const formattedTotal = currency.format(total);
   const deadlineLabel = deadline === 'normal' ? 'Normal' : 'Urgente';
   const deliveryTime = plan.deadlines[deadline];
   const message = [
@@ -24,6 +25,7 @@ export function BudgetCalculator() {
     '',
     `Tipo: ${plan.name}`,
     `Prazo: ${deadlineLabel} (${deliveryTime})`,
+    `Acréscimo de urgência: ${deadline === 'urgente' ? '25%' : 'não aplicado'}`,
     `Valor estimado: ${formattedTotal}`,
   ].join('\n');
   const whatsappUrl = `${whatsappBase}?text=${encodeURIComponent(message)}`;
@@ -73,8 +75,8 @@ export function BudgetCalculator() {
               <legend className="font-display text-lg font-bold text-white">Prazo</legend>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {[
-                  { id: 'normal', label: 'Normal', time: plan.deadlines.normal },
-                  { id: 'urgente', label: 'Urgente', time: plan.deadlines.urgente },
+                  { id: 'normal', label: 'Normal', time: plan.deadlines.normal, note: 'Sem acréscimo' },
+                  { id: 'urgente', label: 'Urgente', time: plan.deadlines.urgente, note: '+25% sobre o valor' },
                 ].map((item) => (
                   <label
                     key={item.id}
@@ -94,6 +96,7 @@ export function BudgetCalculator() {
                     />
                     <span className="font-semibold text-white">{item.label}</span>
                     <span className="mt-1 block text-sm text-landeer-text">Entrega em {item.time}</span>
+                    <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.16em] text-landeer-cyan">{item.note}</span>
                   </label>
                 ))}
               </div>
@@ -109,6 +112,9 @@ export function BudgetCalculator() {
               Prazo selecionado: <span className="font-semibold text-white">{deadlineLabel}</span>, com entrega em{' '}
               <span className="font-semibold text-white">{deliveryTime}</span>.
             </p>
+            {deadline === 'urgente' ? (
+              <p className="mt-3 text-sm leading-7 text-landeer-text">Urgência adiciona 25% ao valor base do plano.</p>
+            ) : null}
             <p className="mt-3 text-sm leading-7 text-landeer-text">
               Valor estimado. O orçamento final pode variar conforme escopo e integrações.
             </p>
