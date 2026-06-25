@@ -28,7 +28,7 @@ export const socialLinks = [
   { label: 'E-mail', href: 'mailto:contato.landeer@gmail.com', icon: Mail },
   { label: 'Instagram', href: 'https://www.instagram.com/landeer_oficial/', icon: Instagram },
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61591547630045&sk=directory_links', icon: Facebook },
-  { label: 'WhatsApp', href: 'https://wa.me/5521999105599', icon: WhatsAppIcon },
+  { label: 'WhatsApp', href: 'https://wa.me/5521920054352', icon: WhatsAppIcon },
   { label: 'GitHub', href: 'https://github.com/LandEER-Projects', icon: Github },
 ];
 
@@ -78,7 +78,7 @@ export const portfolioItems = [
   { title: 'Página comercial para negócio local', tag: 'WhatsApp', text: 'Experiência mobile-first com prova visual, oferta clara e contato imediato.' },
 ];
 
-export const whatsappBase = 'https://wa.me/5521999105599';
+export const whatsappBase = 'https://wa.me/5521920054352';
 export const emailAddress = 'contato.landeer@gmail.com';
 
 export const plans = [
